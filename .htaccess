@@ -1,0 +1,153 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# HTID:11903997: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:11903997:
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+RewriteCond %{HTTP_REFERER} !^http://administrativo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://administrativo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://api.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://api.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://backup.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://backup.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://creditos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://creditos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-administracion.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-administracion.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-administrativa.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-administrativa.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-servicio-tecnico.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-servicio-tecnico.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-sistemica.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-sistemica.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-vehiculos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://gestion-vehiculos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://mapadeprocesossecretariabarrancabermeja.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://mapadeprocesossecretariabarrancabermeja.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://node.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://node.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://operacionsistemica-gestionvehiculos.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://operacionsistemica-gestionvehiculos.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://rastreo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://rastreo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://silpos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://silpos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.administrativo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.administrativo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.api.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.api.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.backup.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.backup.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.creditos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.creditos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-administracion.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-administracion.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-administrativa.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-administrativa.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-servicio-tecnico.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-servicio-tecnico.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-sistemica.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-sistemica.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-vehiculos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.gestion-vehiculos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.mapadeprocesossecretariabarrancabermeja.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.mapadeprocesossecretariabarrancabermeja.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.node.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.node.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.operacionsistemica-gestionvehiculos.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.operacionsistemica-gestionvehiculos.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.rastreo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.rastreo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.silpos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.silpos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://administrativo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://administrativo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://api.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://api.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://backup.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://backup.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://creditos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://creditos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-administracion.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-administracion.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-administrativa.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-administrativa.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-servicio-tecnico.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-servicio-tecnico.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-sistemica.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-sistemica.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-vehiculos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://gestion-vehiculos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://mapadeprocesossecretariabarrancabermeja.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://mapadeprocesossecretariabarrancabermeja.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://node.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://node.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://operacionsistemica-gestionvehiculos.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://operacionsistemica-gestionvehiculos.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://rastreo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://rastreo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://silpos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://silpos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.administrativo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.administrativo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.api.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.api.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.backup.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.backup.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.creditos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.creditos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-administracion.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-administracion.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-administrativa.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-administrativa.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-servicio-tecnico.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-servicio-tecnico.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-sistemica.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-sistemica.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-vehiculos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.gestion-vehiculos.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.mapadeprocesossecretariabarrancabermeja.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.mapadeprocesossecretariabarrancabermeja.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.node.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.node.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.operacionsistemica-gestionvehiculos.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.operacionsistemica-gestionvehiculos.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.rastreo.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.rastreo.operacionsistemica.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.silpos.operacionsistemica.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.silpos.operacionsistemica.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
